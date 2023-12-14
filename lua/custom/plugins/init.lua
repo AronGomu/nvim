@@ -6,10 +6,13 @@
 return {
 	require('telescope').setup {
 		defaults = {
-			previewer = false,
-			layout_strategy = "center",
+			previewer = true,
+			layout_strategy = "vertical",
 			sorting_strategy = "ascending",
 			layout_config = {
+				mirror = true,
+				preview_cutoff = 0,
+				--
 				height = function(_, _, max_lines)
 					return math.min(max_lines, vim.o.lines)
 				end,
@@ -17,7 +20,6 @@ return {
 					return math.min(max_columns, vim.o.columns)
 				end,
 				prompt_position = "top",
-				preview_cutoff = 0.5
 			},
 		},
 	},
