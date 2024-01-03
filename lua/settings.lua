@@ -18,6 +18,18 @@ vim.o.mouse = 'a'
 --  See `:help 'clipboard'`
 vim.o.clipboard = 'unnamedplus'
 
+if vim.fn.has('wsl') == 1 then
+  vim.api.nvim_create_autocmd('TextYankPost', {
+
+    group = vim.api.nvim_create_augroup('Yank', { clear = true }),
+
+    callback = function()
+      vim.fn.system('clip.exe', vim.fn.getreg('"'))
+    end,
+
+  })
+end
+
 -- Enable break indent
 vim.o.breakindent = true
 
@@ -52,5 +64,3 @@ vim.api.nvim_create_autocmd('TextYankPost', {
   group = highlight_group,
   pattern = '*',
 })
-
-vim.api.nvim_set_option("clipboard", "unnamed")
