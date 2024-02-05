@@ -303,6 +303,8 @@ mason_lspconfig.setup_handlers {
   end,
 }
 
+require 'lspconfig'.coffeesense.setup {}
+
 -- [[ Configure nvim-cmp ]]
 -- See `:help cmp`
 local cmp = require 'cmp'
