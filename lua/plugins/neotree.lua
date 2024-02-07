@@ -22,19 +22,26 @@ return {
 
 			event_handlers = {
 
-				-- autoclose on losing focus
 				{
 					event = "file_opened",
 					handler = function(file_path)
+						-- auto close
+						-- vimc.cmd("Neotree close")
+						-- OR
 						require("neo-tree.command").execute({ action = "close" })
 					end
 				},
 
-				-- auto preview
+
 				{
 					event = 'after_render',
 					handler = function()
-						require("neo-tree.command").execute({ action = "toggle_preview" })
+						-- require("neo-tree.command").execute({action = "toggle_preview"})
+						local state = require('neo-tree.sources.manager').get_state('filesystem')
+						if not require('neo-tree.sources.common.preview').is_active() then
+							state.config = { use_float = false } -- or whatever your config is
+							state.commands.toggle_preview(state)
+						end
 					end
 				}
 			},
