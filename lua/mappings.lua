@@ -24,7 +24,7 @@ vim.keymap.set('n', '<leader>e', vim.diagnostic.open_float, { desc = 'Open float
 vim.keymap.set('n', '<leader>q', vim.diagnostic.setloclist, { desc = 'Open diagnostics list' })
 
 -- Neotree
-vim.keymap.set('n', '<leader>tr', '<Cmd>Neotree reveal<CR> | P')
+vim.keymap.set('n', '<leader>tr', '<Cmd>Neotree reveal<CR> | wincmd p')
 vim.keymap.set('n', '<leader>tc', '<Cmd>Neotree close<CR>')
 vim.keymap.set('n', '<leader>tb', '<Cmd>Neotree buffers<CR>')
 vim.keymap.set('n', '<leader>tf', '<Cmd>Neotree filesystem<CR>')

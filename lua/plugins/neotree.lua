@@ -22,6 +22,7 @@ return {
 
 			event_handlers = {
 
+				-- autoclose tree on entering file
 				{
 					event = "file_opened",
 					handler = function(file_path)
@@ -32,11 +33,9 @@ return {
 					end
 				},
 
-
 				{
 					event = 'after_render',
 					handler = function()
-						-- require("neo-tree.command").execute({action = "toggle_preview"})
 						local state = require('neo-tree.sources.manager').get_state('filesystem')
 						if not require('neo-tree.sources.common.preview').is_active() then
 							state.config = { use_float = false } -- or whatever your config is
