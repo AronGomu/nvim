@@ -6,8 +6,8 @@ return {
 
 		conform.setup({
 			formatters_by_ft = {
-				javascript = { "prettier" },
-				typescript = { "prettier" },
+				javascript = { "eslint_d" },
+				typescript = { "eslint_d" },
 				html       = { "prettier" },
 				css        = { "prettier" },
 				json       = { "prettier" },
@@ -15,7 +15,7 @@ return {
 				graphql    = { "prettier" },
 			},
 			format_on_save = {
-				lsp_fallback = true,
+				lsp_fallback = false,
 				async = false,
 				timeout_ms = 500
 			}
