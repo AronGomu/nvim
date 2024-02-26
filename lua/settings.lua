@@ -33,6 +33,7 @@ vim.o.breakindent = true
 
 -- Save undo history
 vim.o.undofile = true
+vim.o.undodir = os.getenv("HOME") .. '/.vim/undo'
 
 -- Case-insensitive searching UNLESS \C or capital in search
 vim.o.ignorecase = true

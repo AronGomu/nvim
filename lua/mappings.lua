@@ -28,3 +28,6 @@ vim.keymap.set('n', '<leader>tr', '<Cmd>Neotree reveal<CR> | wincmd p')
 vim.keymap.set('n', '<leader>tc', '<Cmd>Neotree close<CR>')
 vim.keymap.set('n', '<leader>tb', '<Cmd>Neotree buffers<CR>')
 vim.keymap.set('n', '<leader>tf', '<Cmd>Neotree filesystem<CR>')
+
+-- Formatting
+vim.keymap.set('n', '<leader>ff', '<Cmd>Format<CR>')
