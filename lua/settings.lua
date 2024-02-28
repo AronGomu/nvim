@@ -1,5 +1,5 @@
 if not ok then
-  vim.cmd 'colorscheme default' -- if the above fails, then use default
+  vim.cmd 'colorscheme quiet' -- if the above fails, then use default
 end
 
 -- Set highlight on search
@@ -11,10 +11,9 @@ vim.wo.number = true
 -- Enable mouse mode
 vim.o.mouse = 'a'
 
--- Sync clipboard between OS and Neovim.
---  Remove this option if you want your OS clipboard to remain independent.
---  See `:help 'clipboard'`
 vim.o.clipboard = 'unnamedplus'
+vim.o.cursorcolumn = true
+vim.o.cursorline = true
 
 if vim.fn.has('wsl') == 1 then
   vim.api.nvim_create_autocmd('TextYankPost', {
