@@ -1,7 +1,3 @@
-if not ok then
-  vim.cmd 'colorscheme quiet' -- if the above fails, then use default
-end
-
 -- Set highlight on search
 vim.o.hlsearch = false
 
